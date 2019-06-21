@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>实时时间展示示例</title>
+    <style>
+    </style>
+</head>
+
+<body style="margin: 0;">
+    <span id="time"></span>
+</body>
+<script type="text/javascript">
+    setTime();
+    setInterval("setTime()", 1000);
+    function setTime() {
+        var d = new Date();
+        document.getElementById("time").innerHTML =
+            d.getFullYear() + "-" + addZero((d.getMonth() + 1)) + "-" + addZero(d.getDate()) + " "
+            + addZero(d.getHours()) + ":" + addZero(d.getMinutes()) + ":" + addZero(d.getSeconds());
+    }
+    function addZero(d) {
+        if (d < 10) {
+            return "0" + d;
+        } else {
+            return d;
+        }
+    }
+</script>
+
+</html>
